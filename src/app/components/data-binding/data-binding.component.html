@@ -1,0 +1,56 @@
+<div class="container">
+<p>data-binding works!</p>
+
+<!-- Inter polation ts => html   -->
+<h3>Inter polation</h3>
+<h5>Creator Name is : <span>{{creatorName}}</span></h5>
+
+<hr>
+<!--  Property binding  -->
+<h3>Property Binding</h3>
+<img [src]="imgSrc" width="50%" alt="">
+
+<hr>
+<h5>Lore ipsum dolor sit amet. <b>{{userAge}}</b></h5>
+<form >
+	<input type="text" value="" [disabled]="inputTrigger" value="20"> 
+	<br>
+	<button (click)="disableInputfunc()" class="btn btn-primary mt-2" >Click Me</button>
+</form>
+
+
+<hr>
+
+<h3>Two Way Binding</h3>
+<form>
+	<input type="text" name="name" [(ngModel)]="inputValue">
+	<br>
+	{{inputValue}}
+	<button (click)="TwoWayDisableInputfunc()" class="btn btn-primary mt-2" >Click Me</button>
+
+</form>
+
+
+<hr>
+
+<h3>Task toggle image</h3>
+
+<img [src]="toggleImgUrl" alt="" width="50%"><br>
+<label for="">{{imageName}}</label><br>
+
+<button (click)="toggleImage()" class="btn btn-danger mt-2" >Click Me</button>
+
+
+<hr>
+<form>
+	<label for="">Your Name</label><br>
+	<input type="text" name="myName" #myName><br>
+	<button (click)="displayName(myName.value)" class="btn btn-primary mt-2" >Click Me</button>
+
+
+</form>
+<div class="mb-5"></div>
+
+
+
+</div>

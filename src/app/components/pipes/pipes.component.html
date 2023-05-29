@@ -1,0 +1,54 @@
+<p>pipes works!</p>
+
+<h4>String pipes</h4>
+<p> {{ message | uppercase }} : <b>Upper Case</b> </p>
+<p> {{ message | lowercase }} : <b>Lower case</b> </p>
+<p> {{ message | titlecase }} : <b>Ttle case</b></p>
+
+
+<h4>Spice pipes</h4>
+<p> {{ message | slice:0:10 }} : <b>Ttle case</b></p>
+<p> {{ message | slice:12 }} : <b>Ttle case</b></p>
+<p> {{ message | slice:-12:-1 }} : <b>Ttle case</b></p>
+
+<h4>json pipes</h4>
+<p> {{ objects | json }} </p>
+
+<h4>Number pipes</h4>
+<p> {{ 5512.1015100120 | number: '3.1-3' }} </p>
+
+
+<h4>Currency pipes</h4>
+<p> {{ 120 | currency:'INR'}} </p>
+
+
+<h4>Date pipes</h4>
+<p> {{ myDate }} </p>
+<p> {{ myDate | date:'dd-MM-YYYY' }} </p>
+<p> {{ myDate | date:'medium' }} </p>
+<p> {{ myDate | date:'aa' }} </p>
+<p> {{ myDate | date:'hh:mm:ss (aa) ZZZZZ' }} </p>
+
+<h4>mapping pipes</h4>
+<div>{{gender | i18nSelect: inviteMap}} </div>
+
+<h4>object for looop print</h4>
+<p *ngFor="let coutryData of coutryDatas">{{ coutryData.name }}</p>
+
+<table class="table table-striped table-bordered table-dark">
+    <thead class="thead-light bg-light">
+        <tr> 
+            <th>Sr No.</th>
+            <th>Name</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let coutryData of coutryDatas">
+            <td (click)="setNavigateRno(coutryData.sr)">{{ coutryData.sr }}</td>
+            <td>{{ coutryData.name | gender:coutryData.gender }}</td>
+            <td>{{ coutryData.gender }}</td>
+        </tr>
+    </tbody>
+</table>
+

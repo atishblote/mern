@@ -1,0 +1,36 @@
+.text-red{
+    color: red;
+}
+.text-right{
+    text-align: right;
+}
+.text-min{
+    color: unset;
+}
+.text-green {
+    color: green;
+}
+.utdf__form_body {
+    
+    background: white;
+    width: 351px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 16px #2222;
+}
+.utdf__form_body_inner{
+    padding: 28px;
+}
+.form_head {
+    background: #0d6efd;
+    padding: 8px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 19px;
+    border-radius: 10px 10px 0px 0px;
+}
+.form-group {
+    margin-bottom: 10px;
+}

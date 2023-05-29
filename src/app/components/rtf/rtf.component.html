@@ -1,0 +1,71 @@
+<div class="container">
+
+    <div class="utdf__form_body">
+      <div class="form_head">
+        Submit Your Details
+      </div>
+        <form class="utdf__form_body_inner" [formGroup]="stuData"  (ngSubmit)="rtfFunction(stuData.value)">
+            <div class="form-group">
+                <label for="exampleInputName">First Name</label>
+                <input type="text" class="form-control" placeholder="Enter Last Name" minlength="2" name="rtfFname" formControlName="rtfFname">
+
+                <div class="text-red text-right" *ngIf="stuData.get('rtfFname').invalid && stuData.get('rtfFname').touched">
+                 <p *ngIf="stuData.get('rtfFname').errors?.required">First name is invalid</p>
+                </div>
+                
+              </div>
+              <div class="form-group">
+                <label for="">Last Name</label>
+                <input type="text" name="rtfLname" placeholder="Enter Last Name" maxlength="10" class="form-control" formControlName="rtfLname">
+              </div>
+              <div class="text-red text-right" *ngIf="stuData.get('rtfLname').invalid && stuData.get('rtfLname').touched">
+                
+                <p *ngIf="stuData.get('rtfLname').errors?.required">*Fill is Required</p>
+              </div>
+
+              <div class="form-group">
+                <label for="">Select Cources</label>
+                <select name="cources" id="" class="form-control" formControlName="rtfCources"> 
+                  <option value="">Select Any Cources</option>
+                  <option [value]="c" *ngFor="let c of subData">{{c}}</option>
+                </select>
+  
+              </div>
+              <div class="text-red text-right" *ngIf="stuData.get('rtfCources').invalid && stuData.get('rtfCources').touched">
+                <!-- <p *ngIf="stuData.get('rtfCources').errors?.invalid">Select a Cource in DropDown</p> -->
+                Select a Cource in DropDown  
+              </div>
+
+              
+              <div class="form-group">
+                <label for="">Number</label>
+                <input type="text" name="name" class="form-control" placeholder="+91 " formControlName="rtfNumber">
+              </div>
+              <div class="text-red text-right" *ngIf="stuData.get('rtfNumber').invalid && stuData.get('rtfNumber').touched">
+                <p *ngIf="stuData.get('rtfNumber').errors?.required">Number is Required</p>
+                <p *ngIf="stuData.get('rtfNumber').errors?.pattern">10 Digit Number</p>
+              </div>
+
+              <div class="form-group">
+                <label for="">Your Email</label>
+                <input type="text" name="Email" class="form-control" placeholder="Enter @gmail.com" formControlName="rtfEmail">
+              </div>
+              <div class="text-red text-right" *ngIf="stuData.get('rtfEmail').invalid && stuData.get('rtfEmail').touched">
+                <p *ngIf="stuData.get('rtfEmail').errors?.required">Email Address is Required</p>
+                <p *ngIf="stuData.get('rtfEmail').errors?.pattern">Email Address like user@gmail.com</p>
+              </div>
+
+              <div class="form-group">
+                <label for="">Your Password</label>
+                <input type="text" name="password" class="form-control" placeholder="Enter Password" formControlName="rtfPassword">
+              </div>
+              <div class="text-red text-right" *ngIf="stuData.get('rtfPassword').invalid && stuData.get('rtfPassword').touched">
+                <p *ngIf="stuData.get('rtfPassword').errors?.required">Email Address is Required</p>
+                <p *ngIf="stuData.get('rtfPassword').errors?.pattern">Enter Minimum 5 letter</p>
+                <!-- <p *ngIf="stuData.get('rtfPassword').errors?.maxlength">Maximum password lenght 8</p> -->
+              </div>
+
+            <button  type="submit" class=" mt-2 btn btn-success" [disabled]="stuData.invalid" >Submit</button>
+          </form>
+        </div>
+    </div>

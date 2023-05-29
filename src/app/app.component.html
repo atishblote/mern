@@ -1,0 +1,70 @@
+<!-- <div class="container">
+    <app-nav></app-nav>
+</div>
+<hr>
+
+<div class="container"> -->
+    <!-- <app-data-binding></app-data-binding> -->
+    <!-- <app-directives></app-directives> -->
+    <!-- assignments 26-0--2022 -->
+    <!-- <app-assignments></app-assignments> -->
+    <!-- <app-pipes></app-pipes> -->
+    <!-- <app-parent></app-parent> -->
+
+    <!-- <router-outlet></router-outlet>
+</div> -->
+
+<!-- <div class="app-module">
+    <div class="row p-0 m-0">
+        <div class="col-3 p-4 left__nav_sticky">
+            <app-nav></app-nav>
+        </div>
+        <div class="col p-4 right__nav_sticky">
+            <button type="button" mat-button (click)="drawer.toggle()">
+                Toggle sidenav
+              </button>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div> -->
+
+<mat-drawer-container class="example-container" class="h_100 d_block" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <app-nav></app-nav>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content bg-light body_100">
+      <div class="header_class">
+        <mat-toolbar color="primary">
+            <span><button type="button" class="hamberger" mat-button (click)="drawer.toggle()">
+            <span class="img_1"><img src="./assets/img/menu.png" alt=""></span>
+               
+              </button>
+              <span>My App</span>
+            </span>
+          
+            <!-- This fills the remaining space of the current row -->
+            <span class="example-fill-remaining-space"></span>
+          
+            <span class="img_1"><img src="./assets/img/notification.png" alt=""></span>
+            <span class="img_1"><img src="./assets/img/sharing.png" alt=""></span>
+            <span><button style="font-size: 15px;  margin-left: 10px;"  type="button" class="btn btn-outline-warning" (click)="logOutSession()">LogOut</button></span>
+          </mat-toolbar>
+        
+      </div>
+      <div class="p-4">
+      <router-outlet></router-outlet>
+      </div>
+    </div>
+  
+  </mat-drawer-container>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- <router-outlet></router-outlet> -->

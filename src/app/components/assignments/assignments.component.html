@@ -1,0 +1,34 @@
+<h1>Assignment</h1>
+
+
+<div class="row " style="min-height: 500px;">
+    <div class="col">
+        <button class="btn btn-primary" (click)="carsPrintFn()">Show Cars</button>
+        <div *ngIf="setButtonCars">
+            <table class="table table-dark table-striped mt-2">
+                <thead class="text-dark"><tr><th style="color: aqua;">Cars Brand</th></tr></thead>
+                <tbody>
+                    <tr *ngFor="let brand of carsBrand" (click)="showSelectedName(brand)"><td>{{brand}}</td></tr>
+                </tbody>
+            </table>
+           
+        </div>
+        
+
+    </div>
+    <div class="col">
+        <button class="btn btn-primary" (click)="bikePrintFn()">Show Bikes</button>
+        <div *ngIf="setButtonBike">
+            <table class="table table-dark table-striped mt-2">
+                <thead class="text-dark"><tr><th style="color: aqua;">Bike Brand</th></tr></thead>
+                <tbody>
+                    <tr *ngFor="let brand of bikeBrands" (click)="showSelectedName(brand)" ><td> {{brand}}</td></tr>
+                </tbody>
+            </table>
+           
+        </div>
+        
+
+    </div>
+    <h4>{{showClickBrand}}</h4>
+</div>

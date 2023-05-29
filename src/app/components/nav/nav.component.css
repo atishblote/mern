@@ -1,0 +1,17 @@
+li{
+    list-style: disc;
+    margin: 10px;
+    /* display: inline; */
+    /* background-color: aqua; */
+    cursor: pointer;
+}
+ul{
+    padding: 0px;
+    margin: 10px;
+}
+h3{
+    color: rgb(87, 87, 87);
+}
+.list_pad {
+    height: 42px !important;
+}

@@ -1,0 +1,84 @@
+<p>dashboard works!</p>
+
+
+<!-- <button (click)="getLoginData()">get</button> -->
+<p>Get db.json file data </p>
+<div class="row mb-3">
+    <div class="col-8">
+        <button class="btn btn-primary mb-2" routerLink="add">Add</button>
+    </div>
+    <div class="col-3">
+        <div>
+            <div class="form-group"> </div>
+            <input type="text" placeholder="Serach Here..." name="search" class="form-control" [(ngModel)]="term">
+        </div>
+    </div>
+</div>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Release Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of postData |filter:term | paginate: { itemsPerPage: 3, currentPage: p }">
+            <td>{{ p?.id }}</td>
+            <td>{{ p?.title }}</td>
+            <td>{{ p?.releaseDate }}</td>
+            <td><button class="btn btn-outline-warning pr-3" [routerLink]="['edit', p.id]">Edit</button> <button
+                    class="ml-3 btn btn-outline-danger" (click)="deleteMatch(p.id)" >delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-8"></div>
+    <div class="col-4">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+
+
+<hr>
+
+
+
+<p>Get Upcomming match data from live server</p>
+
+<div class="row mb-2">
+    <div class="col-8"></div>
+    <div class="col-3">
+        <input type="text" placeholder="Serach Here..." name="search2" class="form-control" [(ngModel)]="term2">
+
+    </div>
+</div>
+<table class="table table-light">
+    <thead>
+        <tr class="table-dark">
+            <th (click)="orderRsort()">Team Name</th>
+            <th >Start Date</th>
+            <th>End Date</th>
+            <th>ODI</th>
+            <th>Matches</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let upm of upCommingMatch.data |filter:term2 | orderBy: order : reverse | paginate: { itemsPerPage: 5, currentPage: p2 }">
+            <td >{{ upm?.name }}</td>
+            <td>{{ upm?.startDate }}</td>
+            <td >{{ upm?.endDate }}</td>
+            <td>{{ upm?.odi }}</td>
+            <td>{{ upm?.matches }}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-7"></div>
+    <div class="col-5">
+        <pagination-controls (pageChange)="p2 = $event"></pagination-controls>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "title": "Angular",
+      "releaseDate": "101",
+      "id": 2
+    },
+    {
+      "title": "Angular",
+      "releaseDate": "102",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "id": "101",
+      "username": "admin",
+      "password": "admin@123"
+    },
+    {
+      "id": "102",
+      "username": "admin1",
+      "password": "admin@1234"
+    }
+  ]
+}

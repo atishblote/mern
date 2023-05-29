@@ -1,0 +1,17 @@
+<p class="heading_title_p">Edit Works!</p>
+
+<div class="add_data_form">
+    <form #myForm="ngForm"  (ngSubmit)="PutData(myForm.value)" class="example-form">
+        <label for="">Title</label><br>
+        <input class="form-control" type="text" name="title" required [ngModel]="empData?.title"><br>
+        
+        <label for="">Version</label><br>
+        <input class="form-control"  type="text" name="releseversion" required [ngModel]="empData?.releaseDate"><br>
+        <div class="text-center">
+            <button type="submit" mat-raised-button color="primary">Submit</button>
+
+        </div>
+    
+        
+      </form>
+</div>

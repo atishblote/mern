@@ -1,0 +1,62 @@
+<p>directives works!</p>
+<hr>
+<h3>If loop </h3>
+<h2 *ngIf="myVariable; then One; else Two">Directives in Angular</h2>
+
+<ng-template #One>
+    1111111111
+</ng-template>
+<ng-template #Two>
+    2222222222
+</ng-template>
+
+
+<hr>
+<h3>For Loop </h3>
+<ul *ngFor="let fruit of fruits">
+    <li>{{fruit}}</li>
+</ul>
+
+
+<hr>
+<h3>Switch Case Loop </h3>
+
+<div [ngSwitch]="mySwichVariable">
+    <div *ngSwitchCase="'Apple'">Selected Apple</div>
+    <div *ngSwitchCase="'Banana'">Selected Banana</div>
+    <div *ngSwitchCase="'Mango'">Selected Mango</div>
+    <div *ngSwitchCase="'Pinapple'">Selected Pinapple</div>
+    <div *ngSwitchCase="'Orange'">Selected Orange</div>
+    <div *ngSwitchCase="'Red Chilli'">Selected Red Chilli</div>
+</div>
+
+
+<div [ngSwitch]="mySwichVariable">
+    <div *ngFor="let fruit of fruits">
+        <div *ngSwitchCase="fruit">You Have Selected <b>{{fruit}}</b></div>
+    </div>
+    <li *ngSwitchCaseDefault>No Selected Fruit.</li>
+</div>
+
+
+<hr>
+
+<h3>ngStyle</h3>
+
+<p [ngStyle]="myStyle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores, saepe.</p>
+
+<hr>
+
+
+<h3>ngClass</h3>
+<p [ngClass]="myClass">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam animi omnis officiis numquam maiores. Iure nulla at accusantium atque incidunt?</p>
+
+
+<hr>
+
+<h3>Practice nggClass and ngStyle</h3>
+<ul>
+    <li [ngClass]="liClass" (click)="liClickFn()" >one</li>
+    <li [ngClass]="liClass" (click)="liClickFn()">Two</li>
+    <li [ngClass]="liClass" (click)="liClickFn()">Three</li>
+</ul>

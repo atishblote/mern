@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: poppins, "Helvetica Neue", sans-serif; }
+/* .left__nav_sticky{ background-color: #212529;} */
+.heading_title_p{
+    font-size: 30px;
+    font-style: oblique;
+    color: brown;
+    text-align: center;
+}   

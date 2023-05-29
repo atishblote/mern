@@ -1,0 +1,143 @@
+<div class="container">
+
+<div class="utdf__form_body">
+  <div class="form_head">
+    Submit Your Details
+  </div>
+    <form class="utdf__form_body_inner" #myForm="ngForm"  ngForm (ngSubmit)="getSubmitForm(myForm.value)">
+        <div class="form-group">
+            <label for="exampleInputName">First Name</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Enter Your Name"  
+                required 
+                minlength="4" 
+                id="refNameText" 
+                name="refNameText"  
+                #refNameText="ngModel" 
+                ngModel
+            >
+            <small *ngIf="refNameText.invalid && (refNameText.dirty || refNameText.touched)" class="form-text text-muted">
+                <div *ngIf="refNameText.errors?.['required']" class="text-red text-right">  text is required  </div>
+                <div *ngIf="refNameText.errors?.['minlength']" class="text-min text-right">  Used min 8 Text  </div>
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputName">Last Name</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Enter Your Name"  
+                required 
+                minlength="4" 
+                id="refLameText" 
+                name="refLameText"  
+                #refLameText="ngModel" 
+                ngModel
+            >
+            <small *ngIf="refLameText.invalid && (refLameText.dirty || refLameText.touched)" class="form-text text-muted">
+                <div *ngIf="refLameText.errors?.['required']" class="text-red text-right">  text is required  </div>
+                <div *ngIf="refLameText.errors?.['minlength']" class="text-min text-right">  Used min 8 Text  </div>
+            </small>
+          </div>
+
+
+          <!-- select -->
+          <div class="form-group">
+            <label for="exampleInputName">Select Cources</label>
+            <select name="courses" class="form-control" id=""  #redCourses="ngModel" ngModel required>
+              <option value=""> Select Your Cources</option>
+              <option [value]="c" *ngFor="let c of courses" value="none" >{{ c }}</option>
+            </select>
+            <small *ngIf="redCourses.invalid && (redCourses.dirty || redCourses.touched)" class="form-text text-muted">
+              <div *ngIf="redCourses.errors?.['required']" class="text-red text-right">  Courses is required  </div>
+          </small>
+          </div>
+
+        <!-- number -->
+        <div class="form-group">
+          <label >Number</label>
+          <input 
+            class="form-control"
+            type="text"
+            maxlength="10" 
+            pattern="[0-9]+"
+            name="refNumber"
+            placeholder="+91"
+            #refNumber="ngModel" 
+            ngModel 
+            required>
+
+            <small *ngIf="refNumber.invalid && (refNumber.dirty || refNumber.touched)" class="form-text text-muted">
+              <div *ngIf="refNumber.errors?.['required']" class="text-red text-right">  Number  is required  </div>
+              <div class="text-red text-right" *ngIf="refNumber.errors && refNumber.errors?.['pattern']">
+                 Only Number Can be Accepted
+              </div>
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input 
+            type="email" 
+            class="form-control"  
+            placeholder="Enter email" 
+            name="refEmail" 
+            required 
+            id="refEmail" 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+            #refEmail="ngModel" 
+            ngModel
+            >
+          <small *ngIf="refEmail.invalid && (refEmail.dirty || refEmail.touched)" class="form-text text-muted">
+            <div *ngIf="refEmail.errors?.['required']" class="text-red text-right">  Email  is required  </div>
+            <div class="text-red text-right" *ngIf="refEmail.errors && refEmail.errors?.['pattern']">
+               "@" and Enter A correct email
+            </div>
+        </small>
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" 
+            class="form-control" 
+            id="redPass" 
+            name="redPass"
+            placeholder="Password" 
+            required 
+            minlength="8"
+            pattern="[a-z0-9._%+-]+@[a-z]{2,}"
+            #refPass="ngModel" 
+            ngModel 
+            >
+            <small *ngIf="refPass.invalid && (refPass.dirty || refPass.touched)" class="form-text text-muted">
+                <div *ngIf="refPass.errors?.['required']" class="text-red text-right">  Password  is required  </div>
+                <div *ngIf="refPass.errors?.['minlength']" class="text-red text-right">  Password required 8 min  </div>
+                <div class="text-red text-right" *ngIf="refPass.errors && refPass.errors?.['pattern']">
+                   used pattern [text "@" " . " text ]
+                </div>
+
+            </small>
+        </div>
+        <div class="form-check">
+          <input 
+            type="checkbox" 
+            class="form-check-input" 
+            name="refCheckBox"
+            required="true"
+            id="refCheckBox"
+            #refCheckBoxte="ngModel"
+            ngModel
+            >
+          <label class="form-check-label" for="refCheckBox">Check me out</label>
+          <small *ngIf="refCheckBoxte.invalid && refCheckBoxte.touched" class="form-text text-muted">
+              <p class="text-red text-right">Please check Tearm and Condition </p>   
+            
+        </small>
+        </div>
+        <button  type="submit" class=" mt-2 btn btn-primary" [disabled]="myForm.invalid" >Submit</button>
+      </form>
+    </div>
+</div>
